@@ -1,0 +1,132 @@
+.custom-navbar {
+  background-color: #f5f7fa;
+  font-family: "Comfortaa", cursive;
+  padding: 0.5rem 1rem; 
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  background: linear-gradient(135deg, #00bcd4, #0099b8, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  font-size: 1.8rem; 
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeSlideIn 0.8s forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-brand:hover {
+  transform: scale(1.1);
+  text-shadow: 1px 1px 8px rgba(0, 188, 212, 0.5);
+}
+
+.nav-link {
+  color: #0f0f0f;
+  font-weight: 600;
+  margin-right: 0.8rem;
+  font-size: 0.95rem; 
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00bcd4;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #00bcd4;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  padding: 0.25rem;
+}
+
+.navbar-toggler-icon {
+  width: 22px;
+  height: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0,0,0,0.7)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.logout-link {
+  color: #0f0f0f;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+.logout-link:hover {
+  color: #b52b38;
+}
+
+.cart-link {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #ff4b2b;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 1px 5px;
+  min-width: 18px;
+  text-align: center;
+  line-height: 1;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 992px) {
+  .nav-link {
+    margin: 0.5rem 0;
+    display: block;
+    text-align: center;
+  }
+
+  .navbar-collapse {
+    background-color: #f8f9fb;
+    border-radius: 10px;
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.6rem;
+  }
+}
